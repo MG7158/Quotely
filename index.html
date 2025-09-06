@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotely - Inspire | Reflect | Grow</title>
+    <meta name="description" content="Discover inspiring quotes organized by meaningful categories">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="logo-container">
+            <div class="logo-mark">"</div>
+            <h1 class="logo-text">Quotely</h1>
+        </div>
+        <p class="tagline">Inspire | Reflect | Grow</p>
+    </div>
+
+    <!-- Main Application -->
+    <div id="app" class="app hidden">
+        <!-- Navigation Header -->
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav-brand">
+                    <div class="logo-mini">
+                        <span class="logo-mark-mini">"</span>
+                        <span class="logo-text-mini">Quotely</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-menu" id="navMenu">
+                    <button class="nav-item" data-category="Inspiration" aria-label="View Inspiration quotes">
+                        Inspiration
+                    </button>
+                    <button class="nav-item" data-category="Love" aria-label="View Love quotes">
+                        Love
+                    </button>
+                    <button class="nav-item" data-category="Humor" aria-label="View Humor quotes">
+                        Humor
+                    </button>
+                    <button class="nav-item" data-category="Life" aria-label="View Life quotes">
+                        Life
+                    </button>
+                    <button class="nav-item" data-category="Wisdom" aria-label="View Wisdom quotes">
+                        Wisdom
+                    </button>
+                    <button class="nav-item" data-category="Motivation" aria-label="View Motivation quotes">
+                        Motivation
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Quote Display Section -->
+                <section class="quote-section">
+                    <div class="quote-container" id="quoteContainer">
+                        <blockquote class="quote-text" id="quoteText" role="img" aria-label="Quote text">
+                            Loading inspiring quote...
+                        </blockquote>
+                        <cite class="quote-author" id="quoteAuthor">
+                            — Quotely
+                        </cite>
+                    </div>
+
+                    <!-- Quote Controls -->
+                    <div class="quote-controls">
+                        <button class="btn btn--outline" id="prevQuote" aria-label="Previous quote" disabled>
+                            <span aria-hidden="true">←</span> Previous
+                        </button>
+                        <button class="btn btn--primary" id="newQuote" aria-label="Get new random quote">
+                            New Quote
+                        </button>
+                        <button class="btn btn--outline" id="nextQuote" aria-label="Next quote" disabled>
+                            Next <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+
+                    <!-- Category Indicator -->
+                    <div class="category-indicator">
+                        <span class="category-label">Category:</span>
+                        <span class="category-name" id="categoryName">Inspiration</span>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="logo-mini">
+                            <span class="logo-mark-mini">"</span>
+                            <span class="logo-text-mini">Quotely</span>
+                        </div>
+                        <p class="footer-tagline">Inspire | Reflect | Grow</p>
+                    </div>
+                    <div class="footer-info">
+                        <p class="footer-text">
+                            © 2025 Quotely. All rights reserved.
+                        </p>
+                        <p class="footer-credits">
+                            Quotes powered by <a href="https://zenquotes.io/" target="_blank" rel="noopener noreferrer">ZenQuotes API</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal hidden" role="dialog" aria-labelledby="errorTitle" aria-describedby="errorMessage">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <h3 id="errorTitle" class="modal-title">Connection Issue</h3>
+            <p id="errorMessage" class="modal-message">
+                Unable to fetch new quotes. Using offline quotes instead.
+            </p>
+            <button class="btn btn--primary" id="closeErrorModal">
+                Got it
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
